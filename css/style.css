@@ -1,0 +1,180 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 999;
+    padding: 0 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: 90px;
+    height: auto;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .login-button,
+  .signup-button {
+    width: 100px; 
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  
+  .login-button:hover,
+  .signup-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+  }
+
+  
+/*------------------------------------------------------*/
+
+  body {
+    background-image: url(../img/fond-principal.png.jpg);
+    background-size: 100%;
+  }
+
+/* ------------------- barre de recherche --------------- */
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  
+  .button-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 21%;
+    margin-bottom: 1rem;
+  }
+  .search-bar input[type="text"] {
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    width: 100%;
+    margin: 0 1rem;
+  }
+  
+  .button-container button {
+    flex: 1;
+    width: 33%;
+    margin: 0 1rem;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+
+  .date-btn {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    width: 20%;
+    margin: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+  }
+  
+  .date-btn:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+  }
+  
+
+  .find-btn {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    width: 20%;
+    margin: 0 1rem;
+  }
+
+  .find-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+  }
+
+  .delivery-options {
+    position: relative;
+    display: none; 
+  }
+
+  .deliver-now-btn {
+      border: 2px solid black;
+      border-radius: 25px;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      width: 100%;
+      margin: 0 1rem;
+    }
+  
+    .deliver-now-btn:hover{
+      cursor:pointer;
+      background-color: black;
+      color: white;
+    }
+
+    button#deliver-now-btn:active {
+      background-color: rgb(6, 115, 1);
+      color: white;
+    }
+    
+
+  .schedule-later-btn {
+    border: 1.5px solid black;
+    border-radius: 25px;
+    padding:0%;
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .schedule-later-btn:hover {
+      cursor:pointer;
+      background-color: black;
+      color: white;
+  }
+  
+  .delivery-buttons {
+    display: none;
+
+  }
