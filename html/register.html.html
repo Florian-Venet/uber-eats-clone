@@ -63,7 +63,25 @@
 //---------------------------------------VALIDATION-----------------------------------//
 
     function Validation(){
-      let nameregex = /[a-]
+      let nameregex = /[a-zA-Z\s]+/;
+      let email = /[a-zA-Z0-9]+@(gmail|yahoo|efrei|hotmail|outlook)\.com.net.fr/;
+      let userregex = /[a-zA-Z0-9]{5,}/;
+    
+      if(!nameregex.test(name.value)){
+        alert("the name should only contain alphabets!");
+        return;
+      }
+
+      if(!email.test(email.value)){
+        alert("enter a valid email");
+        return;
+      }
+
+      if(!userregex.test(username.value)){
+        alert("-user name can only be alphanumeric \n -usernam must be aleast 5 characters \n -username cannot contain spaces");
+        return 
+      }
+
     }
 
 
