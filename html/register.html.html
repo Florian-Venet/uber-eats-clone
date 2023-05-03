@@ -49,8 +49,7 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
 
-  import { getDatabase, ref, set, child, get }
-    from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 
     const db = getDatabase();
 
@@ -60,14 +59,14 @@
     const email = document.getElementById('emailInp');
     const username = document.getElementById('UserInp');
     const pass = document.getElementById('passInp');
-    const submit = document.getElementById('sub_btn');
+    const submit = document.getElementById('sub-btn');
     
 
 //---------------------------------------VALIDATION-----------------------------------//
 
     function Validation(){
       let nameregex = /^[a-zA-Z\s]+$/;
-      let email = /^[a-zA-Z0-9]+@(gmail|yahoo|efrei|hotmail|outlook)\.com.net.fr$/;
+      let emailregex = /^[a-zA-Z0-9]+@(gmail|yahoo|efrei|hotmail|outlook)\.com.net.fr$/;
       let userregex = /^[a-zA-Z0-9]{5,}$/;
     
       if(!nameregex.test(name.value)){
@@ -75,7 +74,7 @@
         return false;
       }
 
-      if(!email.test(email.value)){
+      if(!emailregex.test(email.value)){
         alert("enter a valid email");
         return false;
       }
@@ -131,5 +130,4 @@
 
 </body>
 
-<script src="../uber-eats-clone/js/script.js"></script>
 </html>
