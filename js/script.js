@@ -57,92 +57,28 @@ boutonFermer.addEventListener("click", function() {
   menuLateral.classList.remove("visible");
 });
 
-const scheduleLaterBtn = document.querySelector(".schedule-later-btn");
-const popup = document.querySelector(".popup");
-const popupCloseBtn = document.querySelector(".popup-close-btn");
-const popupTitle = document.querySelector(".popup-title");
-const dayBtn = document.querySelector(".day-btn");
-const timeBtn = document.querySelector(".time-btn");
-const todayBtn = document.querySelector(".today-btn");
-const tomorrowBtn = document.querySelector(".tomorrow-btn");
-const scheduleBtn = document.querySelector(".schedule-btn");
-const deliverNowBtn = document.querySelector(".deliver-now-btn");
-const timeSlots = [
-  "6am - 7am",
-  "7am - 8am",
-  "8am - 9am",
-  "9am - 10am",
-  "10am - 11am",
-  "11am - 12pm",
-  "12pm - 1pm",
-  "1pm - 2pm",
-  "2pm - 3pm",
-  "3pm - 4pm",
-  "4pm - 5pm",
-  "5pm - 6pm",
-  "6pm - 7pm",
-  "7pm - 8pm",
-  "8pm - 9pm",
-  "9pm - 10pm",
-  "10pm - 11pm",
-];
+//------------------------------------schedule-----------------------
+function confirmDelivery() {
+  // Récupérer la date et l'heure choisies
+  const deliveryTime = document.getElementById("delivery-time").value;
+  const deliveryDate = document.getElementById("delivery-date").value;
 
-function showPopup() {
-  popup.classList.add("show");
+  // Mettre à jour le texte du bouton "date-btn"
+  const dateBtn = document.querySelector(".date-btn");
+  dateBtn.textContent = `${deliveryTime} on ${deliveryDate}`;
+
+  // Enregistrer les informations de livraison dans le stockage local
+  localStorage.setItem("deliveryTime", deliveryTime);
+  localStorage.setItem("deliveryDate", deliveryDate);
+
+  // Rediriger vers la page principale
+  window.location.href = "../index.htm";
 }
 
-function hidePopup() {
-  popup.classList.remove("show");
+// Si des informations de livraison ont été enregistrées précédemment, mettre à jour le texte du bouton "date-btn"
+const deliveryTime = localStorage.getItem("deliveryTime");
+const deliveryDate = localStorage.getItem("deliveryDate");
+if (deliveryTime && deliveryDate) {
+  const dateBtn = document.querySelector(".date-btn");
+  dateBtn.textContent = `${deliveryTime} on ${deliveryDate}`;
 }
-
-function showDayChoices() {
-  const dayChoices = document.createElement("div");
-  dayChoices.classList.add("choices");
-  dayChoices.innerHTML = `
-    <button class="today-btn choice">Today</button>
-    <button class="tomorrow-btn choice">Tomorrow</button>
-  `;
-  dayBtn.parentNode.insertBefore(dayChoices, dayBtn.nextSibling);
-  dayBtn.remove();
-}
-
-function showTimeChoices() {
-  const timeChoices = document.createElement("div");
-  timeChoices.classList.add("choices");
-  for (const slot of timeSlots) {
-    const timeSlotBtn = document.createElement("button");
-    timeSlotBtn.classList.add("choice");
-    timeSlotBtn.textContent = slot;
-    timeChoices.appendChild(timeSlotBtn);
-  }
-  timeBtn.parentNode.insertBefore(timeChoices, timeBtn.nextSibling);
-  timeBtn.remove();
-}
-
-function handleDayChoice(event) {
-  popupTitle.textContent = event.target.textContent;
-  showTimeChoices();
-}
-
-function handleTimeChoice(event) {
-  popupTitle.textContent = `${popupTitle.textContent} at ${event.target.textContent}`;
-}
-
-function handleScheduleBtnClick() {
-  hidePopup();
-}
-
-scheduleLaterBtn.addEventListener("click", showPopup);
-popupCloseBtn.addEventListener("click", hidePopup);
-dayBtn.addEventListener("click", showDayChoices);
-document.addEventListener("click", function (event) {
-  if (!event.target.classList.contains("choice")) return;
-  if (event.target.classList.contains("today-btn")) {
-    handleDayChoice(event);
-  } else if (event.target.classList.contains("tomorrow-btn")) {
-    handleDayChoice(event);
-  } else {
-    handleTimeChoice(event);
-  }
-});
-scheduleBtn.addEventListener("click", handleScheduleBtnClick);

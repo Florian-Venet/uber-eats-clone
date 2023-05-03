@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        margin: 0px;
+
+      }
+    </style>
+  </head>
+  
+<body>
+
+  <div class="mb-5">
+      <h3 class="mb-3">Sign up</h3>
+      <input type="text" placeholder="Fullname" id="nameInp" class="form-control mb-3">
+      <input type="text" placeholder="Email" id="emailInp" class="form-control mb-3">
+      <input type="text" placeholder="Username" id="UserInp" class="form-control mb-3">
+      <input type="text" placeholder="Password" id="passInp" class="form-control mb-3">
+      <button type="text" id="sub-btn" class="btn w-100 btn-outline-primary mb-3">Sign up</button>
+      <a href="../html/login2.html" class="badge badge-secondary py-1 w-100">Already have an account ?</a>
+
+  </div>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyC_e6Gdy9cJl6VPW9sB1uqTIFKuTrPRikQ",
+      authDomain: "uber-eats-clone-d68e3.firebaseapp.com",
+      projectId: "uber-eats-clone-d68e3",
+      storageBucket: "uber-eats-clone-d68e3.appspot.com",
+      messagingSenderId: "1040697870806",
+      appId: "1:1040697870806:web:9fe4eaa977f2fa703cbc77"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+  import { getDatabase, ref, set, child, get }
+    from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+
+    const db = getDatabase();
+
+//-------------------------------------THE REFRENECES---------------------------//
+
+    const name = document.getEelementById('nameInp'); 
+    const email = document.getEelementById('emailInd');
+    const usernam = document.getEelementById('userInd');
+    const pass = document.getEelementById('passInd');
+    const submit = document.getEelementById('sub_btn');
+    
+
+//---------------------------------------VALIDATION-----------------------------------//
+
+    function Validation(){
+      let nameregex = /[a-]
+    }
+
+
+  </script>
+  
+
+
+
+</body>
+
+<script src="../uber-eats-clone/js/script.js"></script>
+</html>
