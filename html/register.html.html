@@ -25,15 +25,18 @@
       <input type="text" placeholder="Fullname" id="nameInp" class="form-control mb-3">
       <input type="text" placeholder="Email" id="emailInp" class="form-control mb-3">
       <input type="text" placeholder="Username" id="UserInp" class="form-control mb-3">
-      <input type="text" placeholder="Password" id="passInp" class="form-control mb-3">
+      <input type="password" placeholder="Password" id="passInp" class="form-control mb-3">
       <button type="text" id="sub-btn" class="btn w-100 btn-outline-primary mb-3">Sign up</button>
       <a href="../html/login2.html" class="badge badge-secondary py-1 w-100">Already have an account ?</a>
 
   </div>
 
   <script type="module">
-    // Import the functions you need from the SDKs you need
+
+    // --------------------------FIREBASE CONFIG--------------------------------//
+
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+
     const firebaseConfig = {
       apiKey: "AIzaSyC_e6Gdy9cJl6VPW9sB1uqTIFKuTrPRikQ",
       authDomain: "uber-eats-clone-d68e3.firebaseapp.com",
@@ -53,11 +56,11 @@
 
 //-------------------------------------THE REFRENECES---------------------------//
 
-    const name = document.getEelementById('nameInp'); 
-    const email = document.getEelementById('emailInd');
-    const usernam = document.getEelementById('userInd');
-    const pass = document.getEelementById('passInd');
-    const submit = document.getEelementById('sub_btn');
+    const name = document.getElementById('nameInp'); 
+    const email = document.getElementById('emailInp');
+    const username = document.getElementById('UserInp');
+    const pass = document.getElementById('passInp');
+    const submit = document.getElementById('sub_btn');
     
 
 //---------------------------------------VALIDATION-----------------------------------//
@@ -91,10 +94,10 @@
     function RegisterUser(){
       if(!Validation()){
         return;
-      }
+      };
       const dbRef = ref(db);
 
-      get(child(dbRef, "UserList/"+ username.value)).then((snapshot)=>{
+      get(child(dbRef, "UsersList/"+ username.value)).then((snapshot)=>{
         if(snapshot.exists()){
           alert("Account Already Exist");
         }
@@ -105,10 +108,10 @@
             fullname: name.value,
             email: email.value,
             username: username.value,
-            password: pass.value,
+            password: pass.value
           })
           .then(()=>{
-            alert("username added successfully");
+            alert("user added successfully");
           })
           .catch((error)=>{
             alert("error"+ error);
