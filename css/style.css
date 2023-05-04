@@ -26,8 +26,7 @@ header {
     text-align: center;
   }
   
-  .login-button,
-  .signup-button {
+  .register-button {
     width: 100px; 
     background-color: black;
     color: white;
@@ -43,8 +42,7 @@ header {
   }
   
   
-  .login-button:hover,
-  .signup-button:hover {
+  .register-button:hover {
     cursor: pointer;
     background-color: white;
     color: black;
