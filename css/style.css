@@ -23,10 +23,10 @@ header {
   }
   
   .button-container {
-    display: flex; 
-    align-items: center;
-    
-  }
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  } 
   
   .register-button{
     width: 100px; 
