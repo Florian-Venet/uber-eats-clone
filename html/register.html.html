@@ -12,14 +12,14 @@
 
 <body>
 
-  <div class="page-container"></div>
+
   <div class="mb-5">
     <h3 class="mb-3">Sign up</h3>
-    <input type="text" placeholder="Fullname" id="nameInp" class="form-control mb-3">
-    <input type="text" placeholder="Email" id="email" class="form-control mb-3">
-    <input type="text" placeholder="Username" id="username" class="form-control mb-3">
-    <input type="password" placeholder="Password" id="password" class="form-control mb-3">
-    <button type="text" id="sub-btn" class="btn w-100 btn-outline-primary mb-3">Sign up</button>
+    <input type="text" id="username" name="username" placeholder="Username" class="form-control mb-3" />
+    <input type="text" placeholder="E-mail" name="email" id="email" class="form-control mb-3" />
+    <input type="password" placeholder="Password" name="password" id="password" class="form-control mb-3">
+
+    <input type="submit" id="signUp" name="signup_submit" value="Sign up" class="btn w-100 btn-outline-primary mb-3" />
     <a href="../html/login2.html" class="badge badge-secondary py-1 w-100">Already have an account ?</a>
 
   </div>
@@ -28,7 +28,7 @@
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-  import { getDatabase } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
   import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -49,7 +49,7 @@
   const database = getDatabase(app);
   const auth = getAuth();
 
-  submit.addEventListener('click', RegisterUser);
+  signUp.addEventListener('click',(e) => {
 
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
@@ -59,6 +59,12 @@
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
+
+    set(ref(database, 'users/' + user.uid),{
+      username: username,
+      email: email,
+    })
+
     alert('user created');
     // ...
   })
@@ -68,6 +74,7 @@
 
     alert(errorMessage);
     // ..
+  });
   });
 </script>
 
