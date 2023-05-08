@@ -86,16 +86,10 @@ signInWithEmailAndPassword(auth, email, password)
     })
 
   alert('User loged in!');  
-  // Récupération du bouton "OK"
-const okButton = document.querySelector('.popup-content input[type="button"]');
-
-// Ajout d'un écouteur d'événements sur le clic du bouton "OK"
-okButton.addEventListener('click', () => {
-  // Redirection vers la page souhaitée
-  window.location.href = 'index.html';
-});
-
+// Redirection
+window.location.href = "../index.html";
 })
+
 .catch((error) => {
   const errorCode = error.code;
   const errorMessage = error.message;
@@ -131,6 +125,4 @@ logout.addEventListener('click',(e)=>{
   })
 })
 </script>
-
-<script src="../uber-eats-clone/js/script.js"></script>
 </html>
