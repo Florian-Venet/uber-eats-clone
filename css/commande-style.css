@@ -75,29 +75,27 @@ header {
   
   .listings {
     padding: 2rem 0;
+   
+    }
+
     .header {
       display: flex;
- 
-      .header-title {
 
-        .span {
+      }
+
+    .header-viewOptions {
+      display: flex;
+      align-items: center;
+      margin: auto 0 auto auto;
+      
+      }
+
+    .span {
           color: var(--color-greyDarker);
           font-weight: 300;
           font-size: 0.9rem;
         }
-      }
-      .header-viewOptions {
-        display: flex;
-        align-items: center;
-        margin: auto 0 auto auto;
-        .viewAll {
-          color: var(--color-green);
-          padding-right: 2rem;
-        }
-        
-        }
-      }
-    }
+
     .circle {
       width: 40px;
       height: 40px;
@@ -106,36 +104,31 @@ header {
       border-radius: 50%;
       display: inline-flex;
     }
+
     .listings-grid {
       display: flex;
       overflow: hidden;
       scroll-snap-type: x mandatory;
-  
+         
+      }
+
       .listings-grid-element {
         width: 30%;
         margin-top: 2rem;
-  
-        .image {
-          height: 240px;
-          overflow: hidden;
-          
-        }
-        
-        .text {
-          display: flex;
-          align-items: center;
-          border-bottom: 1px solid #ddd;
-          padding: 1rem 0;
-         
-          .rating {
-            margin: auto 0 auto auto;
-            height: 100%;
-  
-            
-          }
-        }
       }
-    }
+
+      .text {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding: 1rem 0;
+ 
+      }
+
+      .rating {
+        margin: auto 0 auto auto;
+        height: 100%;
+      }
 
     .listings-col {
       display: flex;
@@ -146,6 +139,14 @@ header {
       flex-basis: 100%;
       scroll-snap-align: start;
       gap: 65px;
+    }
+
+
+    .image {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      
     }
 
   h3 {
