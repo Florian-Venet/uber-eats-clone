@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../css/style-secondaire.css">
+    <link rel="stylesheet" type="text/css" href="../css/schedule.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
   </head>
   <body>
     <header>
       <a href="../index.html" class="logo-image-link">
-        <img src="../img/logo-noir.png.png" alt="Logo" class="logo-image">
+        <img src="../img/logo-noir.png" alt="Logo" class="logo-image">
       </a>      
-      <div class="button-container">
-        <div class="button-container">
-          <a href="./register.html.html" class="register-button">Register</a>
-        </div>    
-      </div> 
+      <a href="register.html" class="register-button">Register</a>
     </header>
-
     <body>
-      <div class="background">
-        <div class="popup">
+      <div class="popup">
+        <div>
           <h2>Schedule Delivery</h2>
           <label for="delivery-time">Delivery Time:</label>
           <select id="delivery-time">
@@ -42,11 +39,9 @@
           </select>
           <label for="delivery-date">Delivery Date:</label>
           <input type="date" id="delivery-date" name="delivery-date">
-          <button id="confirm-btn" onclick="confirmDelivery()">Confirm</button>
-
         </div>
+        <button id="confirm-btn" onclick="confirmDelivery()">Confirm</button>
       </div>
-      
       <script src="../js/script.js"></script>
     </body>
     </html>
