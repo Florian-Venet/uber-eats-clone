@@ -21,7 +21,7 @@
         <input type="password" placeholder="Password" name="password" id="password"/>
       </div>
       <div>
-        <button id="registerBtn">Sign up</button>
+        <button id="register">Sign up</button>
         <a href="../html/login.html">Already have an account ?</a>
       </div>
     </div>
@@ -50,7 +50,7 @@
     const database = getDatabase(app);
     const auth = getAuth();
 
-    registerBtn.addEventListener('click',(e) => {
+    register.addEventListener('click',(e) => {
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       var username = document.getElementById('username').value;
