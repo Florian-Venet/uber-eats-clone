@@ -80,7 +80,7 @@ header {
       align-items: center;
       .header-title {
 
-        span {
+        .span {
           color: var(--color-greyDarker);
           font-weight: 300;
           font-size: 0.9rem;
@@ -94,20 +94,7 @@ header {
           color: var(--color-green);
           padding-right: 2rem;
         }
-        .viewMore {
-          .arrow {
-            background: red;
-            align-items: center;
-            justify-content: center;
-            background: var(--color-grey);
-            opacity: 0.3;
-            transition: all 0.2s ease-in-out;
-            cursor: pointer;
-            &.darker,
-            &:hover {
-              opacity: 1;
-            }
-          }
+        
         }
       }
     }
@@ -163,7 +150,6 @@ header {
         }
       }
     }
-  }
 
   h3 {
     font-weight: 400;
