@@ -87,4 +87,14 @@ header {
 .popup button:hover {
   background-color: #3e8e41;
 }
-  
+
+.popup a {
+  display: block;
+  text-decoration: none;
+  color: lightgray;
+  margin-top: 10px;
+}
+
+.popup a:hover {
+  text-decoration: underline;
+}
