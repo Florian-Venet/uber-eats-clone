@@ -333,51 +333,83 @@ button:hover{
 ----pop up ------------*/
 
 
-.popup {
+/* The Modal (background) */
+.modal {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 9999;
-  background-color: white;
-  padding: 20px;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 80%;
+  max-height: 80%;
+  background-color: #fefefe;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-  width: 80%;
-  max-width: 800px;
-  height: 80%;
-  max-height: 800px;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
-.popup-image {
-  max-width: 100%;
-  max-height: 70%;
-  object-fit: contain;
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #f1f1f1;
+  cursor: pointer;
 }
 
-.popup-text {
+.close:hover,
+.close:focus {
+  color: #f44336;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Images */
+.modal-text img {
+  max-width: 50%;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Modal Info */
+.modal-info {
+  flex-basis: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-info h3 {
   font-size: 24px;
-  margin-top: 20px;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
-.popup-close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  cursor: pointer;
-  font-size: 20px;
+.modal-info span {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.popup-background {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 9998;
+.modal-info p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
