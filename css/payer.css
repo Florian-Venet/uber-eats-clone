@@ -227,15 +227,7 @@ form{
 .Yorder{
   flex: 2;
 }
-.title{
-  background: -moz-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);
-  background: -ms-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);
-  background: -o-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);
-  background: linear-gradient(to bottom right, #5195A8 0%, #70EAFF 100%);
-  border-radius:5px 5px 0 0 ;
-  padding: 20px;
-  color: #f6f6f6;
-}
+
 h2{
   margin: 0;
   padding-left: 15px; 
