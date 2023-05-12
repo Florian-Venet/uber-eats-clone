@@ -332,68 +332,56 @@ button:hover{
 -----------------------
 ----pop up ------------*/
 
+
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 400px;
+  width: 80%;
+  max-width: 600px;
   background-color: white;
-  border: 2px solid black;
   padding: 20px;
-  text-align: center;
-  z-index: 9999;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .popup h2 {
+  font-size: 1.5rem;
   margin-top: 0;
 }
 
-.content {
+.popup .content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.image-small {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+.popup .menu-container {
+  width: 50%;
+  margin: 10px;
 }
 
-.desc {
-  width: 200px;
+.popup .desc {
   text-align: left;
 }
 
-.desc h3 {
-  margin-top: 0;
+
+.popup .image-popup {
+  overflow: hidden;
+  height: 240px;
+  width: 100%;
 }
 
-.desc p {
-  margin: 10px 0;
-}
-
-.close-button {
+.popup .close-button {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 20px;
-  font-weight: bold;
+  top: 10px;
+  right: 10px;
+  background-color: red;
   color: white;
-  background-color: rgb(158, 7, 7);
   border: none;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
+  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.close-button:hover {
-  background-color: red;
 }
