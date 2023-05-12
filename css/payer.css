@@ -382,3 +382,9 @@ button:hover{
   height: 30px;
   cursor: pointer;
 }
+
+.popup h2 span {
+  font-size: 0.6em;
+  margin-left: 5px;
+}
+

@@ -78,7 +78,7 @@ function showPopup() {
 
   // Add the title to the popup
   var title = document.createElement("h2");
-  title.innerHTML = "Choose a menu";
+  title.innerHTML = "Choose a menu <span>(only one for the moment)</span>";
   popup.appendChild(title);
 
   // Create the container for the images and text
@@ -93,7 +93,7 @@ function showPopup() {
 
   // Add the description for the first menu
   var desc1 = document.createElement("div");
-  desc1.innerHTML = "<h3>Menu 1 : Bucket 12 tenders - rm20</h3>";
+  desc1.innerHTML = "<h3>Menu 1 : Bucket 12 tenders</h3><p>Description : 12 delicious tenders in our ancestral recipes</p><p>Price : rm 22</p>";
   desc1.className = "desc";
   content.appendChild(desc1);
 
@@ -102,23 +102,6 @@ function showPopup() {
   image1.src = "../img/tenders-KFC.jpg";
   image1.className = "image-popup";
   firstMenuContainer.appendChild(image1);
-
-  // Create a new container for the second menu
-  var secondMenuContainer = document.createElement("div");
-  secondMenuContainer.className = "second-menu-container";
-  content.appendChild(secondMenuContainer);
-
-  // Add the second image to the second menu container
-  var image2 = document.createElement("img");
-image2.src = "../img/burger-KFC.jpg";
-image2.className = "image-popup";
-secondMenuContainer.appendChild(image2);
-
-// Add the description for the second menu to the second menu container
-var desc2 = document.createElement("div");
-desc2.innerHTML = "<h3>Menu 2 : Chicken burger - rm14</h3><p>Description du menu 2 ici</p><p>Prix : 15€</p>";
-desc2.className = "desc";
-secondMenuContainer.appendChild(desc2);
 
   // Add the popup to the page
   document.body.appendChild(popup);
