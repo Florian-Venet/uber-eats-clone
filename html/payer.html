@@ -28,74 +28,125 @@
             <span>The whole world on your plate </span>
           </div>
         </div>
-        <div class="listings-grid">
-          <div class="listings-col">
-            <div class="listings-grid-element" onclick="showPopup1()">
-              <div class="image">
-                <img src="../img/mcdo.jpg" alt="Listing pic"/>
-              </div>
-              <div class="text">
-                <div class="text-title">
-                  <h3>McDonald</h3>
-                  <div class="info">
-                    <span>8rm delivery fee | 20-30 MINS | </span>
-                  </div>
-                </div>
-                <div class="rating">
-                  <span class="circle">4.8</span>
-                </div>
-              </div>
-              <div class="text-lower">
-                <span class="smallText">Fast food | American | Burger | </span>
+        
+    <div class="listings-grid">
+      <div class="listings-col">
+        <div class="listings-grid-element" onclick="showPopup1()">
+          <div class="image">
+            <img src="../img/mcdo.jpg" alt="Listing pic"/>
+          </div>
+          <div class="text">
+            <div class="text-title">
+              <h3>McDonald</h3>
+              <div class="info">
+                <span>8rm delivery fee | 20-30 MINS | </span>
               </div>
             </div>
-            <script>
-              function showPopup1() {
-                // Create the popup element
-                var popup = document.createElement("div");
-                popup.className = "popup";
-              
-                // Add the title to the popup
-                var title = document.createElement("h2");
-                title.innerHTML = "Choose a menu <span>(only one for the moment)</span>";
-                popup.appendChild(title);
-              
-                // Create the container for the images and text
-                var content = document.createElement("div");
-                content.className = "content";
-                popup.appendChild(content);
-              
-                // Create a container for the first menu
-                var firstMenuContainer = document.createElement("div");
-                firstMenuContainer.className = "menu-container";
-                content.appendChild(firstMenuContainer);
-              
-                // Add the description for the first menu
-                var desc1 = document.createElement("div");
-                desc1.innerHTML = "<h3>Menu 1 : Big Mac</h3><p>Description : Our Big Mac with fries and coke</p><p>Price : rm 14</p>";
-                desc1.className = "desc";
-                content.appendChild(desc1);
-              
-                  // Add the first image to the first menu container
-                  var image1 = document.createElement("img");
-                image1.src = "../img/big-mac.jpg";
-                image1.className = "image-popup";
-                firstMenuContainer.appendChild(image1);
-              
-                // Add the popup to the page
-                document.body.appendChild(popup);
-              
-                // Add close button to the popup
-              var closeButton = document.createElement("button");
-              closeButton.innerHTML = "x";
-              closeButton.className = "close-button";
-              closeButton.addEventListener("click", function() {
-                document.body.removeChild(popup);
-              });
-              popup.appendChild(closeButton);
-              
-              }
-            </script>
+            <div class="rating">
+              <span class="circle">4.8</span>
+            </div>
+          </div>
+          <div class="text-lower">
+            <span class="smallText">Fast food | American | Burger | </span>
+          </div>
+        </div>
+        <script>
+          function showPopup1() {
+// Create the popup element
+var popup = document.createElement("div");
+popup.className = "popup";
+
+// Add the title to the popup
+var title = document.createElement("h2");
+title.innerHTML = "Choose a menu <span>(only one for the moment)</span>";
+popup.appendChild(title);
+
+// Create the container for the images and text
+var content = document.createElement("div");
+content.className = "content";
+popup.appendChild(content);
+
+// Create a container for the first menu
+var firstMenuContainer = document.createElement("div");
+firstMenuContainer.className = "menu-container";
+content.appendChild(firstMenuContainer);
+
+// Add the description for the first menu
+var desc1 = document.createElement("div");
+desc1.innerHTML = "<h3>Menu 1 : Big Mac</h3><p>Description : Our Big Mac with fries and coke</p><p>Price : rm 14</p>";
+desc1.className = "desc";
+content.appendChild(desc1);
+
+// Add the first image to the first menu container
+var image1 = document.createElement("img");
+image1.src = "../img/big-mac.jpg";
+image1.className = "image-popup";
+firstMenuContainer.appendChild(image1);
+
+// Add a button to order the menu
+var orderButton = document.createElement("button");
+orderButton.innerHTML = "Order";
+orderButton.className = "order-button";
+orderButton.addEventListener("click", function() {
+  // Add the menu to the Your order section
+  var orderTable = document.querySelector(".Yorder table");
+  var newRow = orderTable.insertRow(orderTable.rows.length - 1);
+  var nameCell = newRow.insertCell(0);
+  nameCell.innerHTML = "Big Mac";
+  var priceCell = newRow.insertCell(1);
+  priceCell.innerHTML = "rm 14";
+
+  // Display an alert to confirm the menu has been added to the order
+  alert("Menu added to your order!");
+});
+
+popup.appendChild(orderButton);
+
+
+// Add close button to the popup
+var closeButton = document.createElement("button");
+closeButton.innerHTML = "x";
+closeButton.className = "close-button";
+closeButton.addEventListener("click", function() {
+  document.body.removeChild(popup);
+});
+popup.appendChild(closeButton);
+
+// Add the popup to the page
+document.body.appendChild(popup);
+}
+
+// Après avoir créé l'élément "menu" dans la fonction showPopup1()
+var orderButton = document.createElement("button");
+orderButton.innerHTML = "Commander";
+orderButton.className = "order-button";
+orderButton.addEventListener("click", function() {
+// Ajouter le menu à la commande
+var commandTable = document.querySelector(".commande-table");
+var newRow = commandTable.insertRow(-1);
+var nameCell = newRow.insertCell(0);
+var priceCell = newRow.insertCell(1);
+var deleteCell = newRow.insertCell(2);
+nameCell.innerHTML = "Big Mac";
+priceCell.innerHTML = "14.00";
+deleteCell.innerHTML = '<button class="delete-button">Supprimer</button>';
+});
+popup.appendChild(orderButton);
+
+
+// Dans la fonction qui initialise la page
+var deleteButtons = document.querySelectorAll(".delete-button");
+deleteButtons.forEach(function(button) {
+button.addEventListener("click", function() {
+  var row = this.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+});
+});
+
+
+        </script>
+      </div>
+    </div>
     
             <div class="listings-grid-element" onclick="showPopup2()">
               <div class="image">
@@ -168,84 +219,22 @@
         </div>
       </div>
     </div>
-  </body>
-
-
-    <script>
-      function addToCart(name, fee) {
-        // Récupérer la table de commande
-        const table = document.querySelector('.Yorder table');
-    
-        // Créer une nouvelle ligne pour le restaurant choisi
-        const row = table.insertRow(-1);
-        const nameCell = row.insertCell(0);
-        const feeCell = row.insertCell(1);
-        nameCell.textContent = name;
-        feeCell.textContent = `rm${fee}`;
-    
-        // Mettre à jour le coût de livraison total
-        const shippingRow = table.rows[2];
-        const shippingFeeCell = shippingRow.cells[1];
-        const shippingFee = parseFloat(shippingFeeCell.textContent.substr(2));
-        shippingFeeCell.textContent = `rm${shippingFee + fee}`;
-      }
-    </script>
-    
-
-
-<!-- Exemple de code JavaScript pour gérer l'ajout d'éléments à la commande
-<script>
-  let order = [];
-
-  function addItem(restaurant, item, price) {
-    order.push({
-      restaurant: restaurant,
-      item: item,
-      price: price
-    });
-    alert("This menu is added to your order!");
-    closePopup();
-    updateOrder();
-  }
-
-  function updateOrder() {
-    let orderList = document.getElementById("order-list");
-    orderList.innerHTML = "";
-    let subtotal = 0;
-    for (let i = 0; i < order.length; i++) {
-      let item = order[i];
-      orderList.innerHTML += "<li>" + item.restaurant + " - " + item.item + " (" + item.price + " RM)</li>";
-      subtotal += item.price;
-    }
-    let shipping = calculateShipping(subtotal);
-    let total = subtotal + shipping;
-    document.getElementById("subtotal").innerHTML = subtotal.toFixed(2);
-    document.getElementById("shipping").innerHTML = shipping.toFixed(2);
-    document.getElementById("total").innerHTML = total.toFixed(2);
-  }
-
-  function closePopup() {
-    let popup = document.getElementsByClassName("popup")[0];
-    popup.style.display = "none";
-  }
-</script>
--->
 
 
 <!-----------------------------------
 --------------------------------------
 -------------ORDER----------------------->
 
-<div class="container">
-  <br><br>
-<hr style="border: 1px solid black;">
-<br><br>
-<div class="header-title">
-  <h2>Summary of your order / Send the order</h2>
-  <span>Ready to treat yourself ? </span><br><br>
-</div>
-  <div class="d-flex">
-    <form action="" method="">
+    <div class="container">
+      <br><br>
+      <hr style="border: 1px solid black;">
+      <br><br>
+      <div class="header-title">
+        <h2>Summary of your order / Send the order</h2>
+        <span>Ready to treat yourself ? </span><br><br>
+      </div>
+      <div class="d-flex">
+      <form action="" method="">
       <label>
         <span class="fname">First Name <span class="required">*</span></span>
         <input type="text" name="fname">
@@ -330,7 +319,6 @@
         </tr>
         <tr>
           <td>Total</td>
-          <td>rmXXXXX</td>
         </tr>
       </table><br>
       <div>
@@ -351,4 +339,7 @@
     </div> <!-- Yorder -->
    </div>
   </div>
-
+  
+  </body>
+  
+  </html>
