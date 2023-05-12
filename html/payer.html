@@ -50,7 +50,7 @@
               </div>
             </div>
     
-            <div class="listings-grid-element" onclick="alert('KFC')">
+            <div class="listings-grid-element" onclick="showPopup()">
               <div class="image">
                 <img src="../img/kfc.jpg" alt="Listing pic"/>
               </div>
@@ -69,6 +69,67 @@
                 <span class="smallText">Fast food | Fried chicken | Again chicken | </span>
               </div>
             </div>
+            
+            <script>
+ function showPopup() {
+  // Create the popup element
+  var popup = document.createElement("div");
+  popup.className = "popup";
+
+  // Add the title to the popup
+  var title = document.createElement("h2");
+  title.innerHTML = "Choose a menu";
+  popup.appendChild(title);
+
+  // Create the container for the images and text
+  var content = document.createElement("div");
+  content.className = "content";
+  popup.appendChild(content);
+
+  // Add the first image to the content
+  var image1 = document.createElement("img");
+  image1.src = "../img/tenders-KFC.jpg";
+  image1.className = "image-small";
+  content.appendChild(image1);
+
+  // Add the description for the first menu
+  var desc1 = document.createElement("div");
+  desc1.innerHTML = "<h3>Menu 1</h3><p>Description du menu 1 ici</p><p>Prix : 10€</p>";
+  desc1.className = "desc";
+  content.appendChild(desc1);
+
+  // Create a new container for the second menu
+  var secondMenuContainer = document.createElement("div");
+  secondMenuContainer.className = "second-menu-container";
+  content.appendChild(secondMenuContainer);
+
+ // Add the second image to the second menu container
+var image2 = document.createElement("img");
+image2.src = "../img/burger-KFC.jpg";
+image2.className = "image-small";
+secondMenuContainer.appendChild(image2);
+
+// Add the description for the second menu to the second menu container
+var desc2 = document.createElement("div");
+desc2.innerHTML = "<h3>Menu 2</h3><p>Description du menu 2 ici</p><p>Prix : 15€</p>";
+desc2.className = "desc";
+secondMenuContainer.appendChild(desc2);
+
+
+  // Add the popup to the page
+  document.body.appendChild(popup);
+
+  // Add close button to the popup
+var closeButton = document.createElement("button");
+closeButton.innerHTML = "x";
+closeButton.className = "close-button";
+closeButton.addEventListener("click", function() {
+  document.body.removeChild(popup);
+});
+popup.appendChild(closeButton);
+
+}
+            </script>
           </div>
         </div>
       </div>
