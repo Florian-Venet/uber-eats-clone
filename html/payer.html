@@ -171,7 +171,6 @@ popup.appendChild(closeButton);
   </body>
 
 
-    <!--
     <script>
       function addToCart(name, fee) {
         // Récupérer la table de commande
@@ -191,75 +190,10 @@ popup.appendChild(closeButton);
         shippingFeeCell.textContent = `rm${shippingFee + fee}`;
       }
     </script>
-    -->
-    <!-----------------------------------
-    --------------------------------------
-    ------POP-UP-------------------------->
     
-    <!-- Exemple de code HTML pour le pop-up de McDonald's 
-    <div id="mcdo-popup" class="popup">
-      <div class="popup-content">
-        <h2>McDonald's Menu</h2>
-        <div class="menu-items">
-          <div class="menu-item">
-            <img src="../img/big-mac.jpg" alt="Burger" />
-            <div class="menu-item-info">
-              <h3>Classic Burger</h3>
-              <p>Our classic burger with beef, lettuce, tomato, and cheese. Served with fries and a drink.</p>
-              <span class="price">rm10</span>
-            </div>
-            <button class="add-to-cart" onclick="addToCart('Classic Burger', 10)">Add to cart</button>
-          </div>
-          <div class="menu-item">
-            <img src="../img/big-mac.jpg" alt="Fries" />
-            <div class="menu-item-info">
-              <h3>French Fries</h3>
-              <p>Our classic French fries, crispy and salted to perfection.</p>
-              <span class="price">rm5</span>
-            </div>
-            <button class="add-to-cart" onclick="addToCart('French Fries', 5)">Add to cart</button>
-          </div>
-        </div>
-        <button class="close-popup" onclick="closePopup()">Close</button>
-      </div>
-    </div>
-    
-    <div id="kfc-popup" class="popup">
-      <div class="popup-content">
-        <h2>KFC Menu</h2>
-        <div class="menu-items">
-          <div class="menu-item">
-            <img src="../img/tenders-KFC.jpg" alt="Fried Chicken" />
-            <div class="menu-item-info">
-              <h3>Fried Chicken Bucket</h3>
-              <p>A bucket of our delicious fried chicken, perfect for sharing.</p>
-              <span class="price">rm25</span>
-            </div>
-            <button class="add-to-cart" onclick="addToCart('Fried Chicken Bucket', 25)">Add to cart</button>
-          </div>
-          <div class="menu-item">
-            <img src="../img/tenders-KFC.jpg" alt="Coleslaw" />
-            <div class="menu-item-info">
-              <h3>Coleslaw</h3>
-              <p>A fresh and crunchy coleslaw side dish.</p>
-              <span class="price">rm6</span>
-            </div>
-            <button class="add-to-cart" onclick="addToCart('Coleslaw', 6)">Add to cart</button>
-          </div>
-        </div>
-        <button class="close-popup" onclick="closePopup()">Close</button>
-      </div>
-    </div>
-    
-  -->
 
 
-
-<!--------------------------------
-------------------------------------
-------FIN POP UP---------------------->
-<!--
- Exemple de code JavaScript pour gérer l'ajout d'éléments à la commande 
+<!-- Exemple de code JavaScript pour gérer l'ajout d'éléments à la commande
 <script>
   let order = [];
 
@@ -295,41 +229,12 @@ popup.appendChild(closeButton);
     popup.style.display = "none";
   }
 </script>
-
-<script>
-// Récupère toutes les images des restaurants
-const restaurantImages = document.querySelectorAll('.listings-grid-element .image img');
-
-// Pour chaque image, ajoute un gestionnaire d'événement de clic
-restaurantImages.forEach(image => {
-  image.addEventListener('click', () => {
-    // Récupère le nom du restaurant en utilisant le titre de l'image parente
-    const restaurantName = image.parentNode.nextElementSibling.querySelector('.text-title h3').textContent;
-
-    // Récupère le pop-up correspondant au restaurant
-    const popup = document.querySelector(`.popup-${restaurantName}`);
-
-    // Ajoute la classe CSS qui affiche le pop-up
-    popup.classList.add('visible');
-  });
-});
-
-// Récupère tous les boutons de fermeture des pop-ups
-const closeButtons = document.querySelectorAll('.popup .close-button');
-
-// Pour chaque bouton, ajoute un gestionnaire d'événement de clic qui masque le pop-up correspondant
-closeButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const popup = button.parentNode;
-    popup.classList.remove('visible');
-  });
-});
-</script>
+-->
 
 
------------------------------------
+<!-----------------------------------
 --------------------------------------
--------------ORDER-----------------------
+-------------ORDER----------------------->
 
 <div class="container">
   <br><br>
@@ -455,4 +360,3 @@ closeButtons.forEach(button => {
    </div>
   </div>
 
--->
