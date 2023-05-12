@@ -30,13 +30,13 @@
         </div>
         <div class="listings-grid">
           <div class="listings-col">
-            <div class="listings-grid-element">
+            <div class="listings-grid-element" onclick="alert('McDonald')">
               <div class="image">
                 <img src="../img/mcdo.jpg" alt="Listing pic"/>
               </div>
               <div class="text">
                 <div class="text-title">
-                  <h3>McDonald's</h3>
+                  <h3>McDonald</h3>
                   <div class="info">
                     <span>8rm delivery fee | 20-30 MINS | </span>
                   </div>
@@ -46,11 +46,11 @@
                 </div>
               </div>
               <div class="text-lower">
-                <span class="smallText"
-                  >Fast food | American | Burger| </span>
+                <span class="smallText">Fast food | American | Burger | </span>
               </div>
             </div>
-            <div class="listings-grid-element">
+    
+            <div class="listings-grid-element" onclick="alert('KFC')">
               <div class="image">
                 <img src="../img/kfc.jpg" alt="Listing pic"/>
               </div>
@@ -66,11 +66,174 @@
                 </div>
               </div>
               <div class="text-lower">
-                <span class="smallText"
-                  >Fast food | Fried chicken | Again chicken | </span
-                >
+                <span class="smallText">Fast food | Fried chicken | Again chicken | </span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--
+    <script>
+      function addToCart(name, fee) {
+        // Récupérer la table de commande
+        const table = document.querySelector('.Yorder table');
+    
+        // Créer une nouvelle ligne pour le restaurant choisi
+        const row = table.insertRow(-1);
+        const nameCell = row.insertCell(0);
+        const feeCell = row.insertCell(1);
+        nameCell.textContent = name;
+        feeCell.textContent = `rm${fee}`;
+    
+        // Mettre à jour le coût de livraison total
+        const shippingRow = table.rows[2];
+        const shippingFeeCell = shippingRow.cells[1];
+        const shippingFee = parseFloat(shippingFeeCell.textContent.substr(2));
+        shippingFeeCell.textContent = `rm${shippingFee + fee}`;
+      }
+    </script>
+    -->
+    <!-----------------------------------
+    --------------------------------------
+    ------POP-UP-------------------------->
+    
+    <!-- Exemple de code HTML pour le pop-up de McDonald's 
+    <div id="mcdo-popup" class="popup">
+      <div class="popup-content">
+        <h2>McDonald's Menu</h2>
+        <div class="menu-items">
+          <div class="menu-item">
+            <img src="../img/big-mac.jpg" alt="Burger" />
+            <div class="menu-item-info">
+              <h3>Classic Burger</h3>
+              <p>Our classic burger with beef, lettuce, tomato, and cheese. Served with fries and a drink.</p>
+              <span class="price">rm10</span>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Classic Burger', 10)">Add to cart</button>
+          </div>
+          <div class="menu-item">
+            <img src="../img/big-mac.jpg" alt="Fries" />
+            <div class="menu-item-info">
+              <h3>French Fries</h3>
+              <p>Our classic French fries, crispy and salted to perfection.</p>
+              <span class="price">rm5</span>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('French Fries', 5)">Add to cart</button>
+          </div>
+        </div>
+        <button class="close-popup" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+    
+    <div id="kfc-popup" class="popup">
+      <div class="popup-content">
+        <h2>KFC Menu</h2>
+        <div class="menu-items">
+          <div class="menu-item">
+            <img src="../img/tenders-KFC.jpg" alt="Fried Chicken" />
+            <div class="menu-item-info">
+              <h3>Fried Chicken Bucket</h3>
+              <p>A bucket of our delicious fried chicken, perfect for sharing.</p>
+              <span class="price">rm25</span>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Fried Chicken Bucket', 25)">Add to cart</button>
+          </div>
+          <div class="menu-item">
+            <img src="../img/tenders-KFC.jpg" alt="Coleslaw" />
+            <div class="menu-item-info">
+              <h3>Coleslaw</h3>
+              <p>A fresh and crunchy coleslaw side dish.</p>
+              <span class="price">rm6</span>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('Coleslaw', 6)">Add to cart</button>
+          </div>
+        </div>
+        <button class="close-popup" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+    
+  -->
+
+
+
+<!--------------------------------
+------------------------------------
+------FIN POP UP---------------------->
+<!--
+ Exemple de code JavaScript pour gérer l'ajout d'éléments à la commande 
+<script>
+  let order = [];
+
+  function addItem(restaurant, item, price) {
+    order.push({
+      restaurant: restaurant,
+      item: item,
+      price: price
+    });
+    alert("This menu is added to your order!");
+    closePopup();
+    updateOrder();
+  }
+
+  function updateOrder() {
+    let orderList = document.getElementById("order-list");
+    orderList.innerHTML = "";
+    let subtotal = 0;
+    for (let i = 0; i < order.length; i++) {
+      let item = order[i];
+      orderList.innerHTML += "<li>" + item.restaurant + " - " + item.item + " (" + item.price + " RM)</li>";
+      subtotal += item.price;
+    }
+    let shipping = calculateShipping(subtotal);
+    let total = subtotal + shipping;
+    document.getElementById("subtotal").innerHTML = subtotal.toFixed(2);
+    document.getElementById("shipping").innerHTML = shipping.toFixed(2);
+    document.getElementById("total").innerHTML = total.toFixed(2);
+  }
+
+  function closePopup() {
+    let popup = document.getElementsByClassName("popup")[0];
+    popup.style.display = "none";
+  }
+</script>
+
+<script>
+// Récupère toutes les images des restaurants
+const restaurantImages = document.querySelectorAll('.listings-grid-element .image img');
+
+// Pour chaque image, ajoute un gestionnaire d'événement de clic
+restaurantImages.forEach(image => {
+  image.addEventListener('click', () => {
+    // Récupère le nom du restaurant en utilisant le titre de l'image parente
+    const restaurantName = image.parentNode.nextElementSibling.querySelector('.text-title h3').textContent;
+
+    // Récupère le pop-up correspondant au restaurant
+    const popup = document.querySelector(`.popup-${restaurantName}`);
+
+    // Ajoute la classe CSS qui affiche le pop-up
+    popup.classList.add('visible');
+  });
+});
+
+// Récupère tous les boutons de fermeture des pop-ups
+const closeButtons = document.querySelectorAll('.popup .close-button');
+
+// Pour chaque bouton, ajoute un gestionnaire d'événement de clic qui masque le pop-up correspondant
+closeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const popup = button.parentNode;
+    popup.classList.remove('visible');
+  });
+});
+</script>
+
+
+-----------------------------------
+--------------------------------------
+-------------ORDER-----------------------
 
 <div class="container">
   <br><br>
@@ -165,16 +328,16 @@
           <th colspan="2">Your order</th>
         </tr>
         <tr>
-          <td>Product Name x 2(Qty)</td>
-          <td>$88.00</td>
+          <td>XXX</td>
+          <td>rmXXX</td>
         </tr>
         <tr>
           <td>Subtotal</td>
-          <td>$88.00</td>
+          <td>rnXXXX</td>
         </tr>
         <tr>
           <td>Shipping</td>
-          <td>Free shipping</td>
+          <td>rmXXXXX</td>
         </tr>
       </table><br>
       <div>
@@ -196,3 +359,4 @@
    </div>
   </div>
 
+-->
