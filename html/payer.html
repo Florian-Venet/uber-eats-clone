@@ -93,7 +93,7 @@ function showPopup() {
 
   // Add the description for the first menu
   var desc1 = document.createElement("div");
-  desc1.innerHTML = "<h3>Menu 1 : Big Mac</h3><p>steak | tomato | salad | onion | sauce with fries and coke</p><p>Price : rm14</p>";
+  desc1.innerHTML = "<h3>Menu 1 : Bucket 12 tenders - rm20</h3>";
   desc1.className = "desc";
   content.appendChild(desc1);
 
@@ -108,18 +108,17 @@ function showPopup() {
   secondMenuContainer.className = "second-menu-container";
   content.appendChild(secondMenuContainer);
 
- // Add the second image to the second menu container
-var image2 = document.createElement("img");
+  // Add the second image to the second menu container
+  var image2 = document.createElement("img");
 image2.src = "../img/burger-KFC.jpg";
 image2.className = "image-popup";
 secondMenuContainer.appendChild(image2);
 
 // Add the description for the second menu to the second menu container
 var desc2 = document.createElement("div");
-desc2.innerHTML = "<h3>Menu 2</h3><p>Description du menu 2 ici</p><p>Prix : 15€</p>";
+desc2.innerHTML = "<h3>Menu 2 : Chicken burger - rm14</h3><p>Description du menu 2 ici</p><p>Prix : 15€</p>";
 desc2.className = "desc";
 secondMenuContainer.appendChild(desc2);
-
 
   // Add the popup to the page
   document.body.appendChild(popup);
