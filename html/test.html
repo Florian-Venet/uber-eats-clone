@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Payer</title>
+	<link rel="stylesheet" type="text/css" href="C:\Users\flori\Desktop\uber-eats-clone!\html\test.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+
+  <body>
+    <!-- Header-->
+    <header>
+      <a href="../index.html" class="logo-image-link">
+        <img src="../img/logo-noir.png" alt="Logo" class="logo-image">
+      </a>      
+      <a href="register.html" class="register-button">Register</a>
+      <a href="commande.html" class="register-button">Commande</a>
+    </header>
+
+
+    <div class="listings-grid">
+        <div class="listings-col">
+          <div class="listings-grid-element" onclick="showPopup1()">
+            <div class="image">
+              <img src="../img/mcdo.jpg" alt="Listing pic"/>
+            </div>
+            <div class="text">
+              <div class="text-title">
+                <h3>McDonald</h3>
+                <div class="info">
+                  <span>8rm delivery fee | 20-30 MINS | </span>
+                </div>
+              </div>
+              <div class="rating">
+                <span class="circle">4.8</span>
+              </div>
+            </div>
+            <div class="text-lower">
+              <span class="smallText">Fast food | American | Burger | </span>
+            </div>
+          </div>
+          <script>
+            function showPopup1() {
+              // Create the popup element
+              var popup = document.createElement("div");
+              popup.className = "popup";
+            
+              // Add the title to the popup
+              var title = document.createElement("h2");
+              title.innerHTML = "Choose a menu <span>(only one for the moment)</span>";
+              popup.appendChild(title);
+            
+              // Create the container for the images and text
+              var content = document.createElement("div");
+              content.className = "content";
+              popup.appendChild(content);
+            
+              // Create a container for the first menu
+              var firstMenuContainer = document.createElement("div");
+              firstMenuContainer.className = "menu-container";
+              content.appendChild(firstMenuContainer);
+            
+              // Add the description for the first menu
+              var desc1 = document.createElement("div");
+              desc1.innerHTML = "<h3>Menu 1 : Big Mac</h3><p>Description : Our Big Mac with fries and coke</p><p>Price : rm 14</p>";
+              desc1.className = "desc";
+              content.appendChild(desc1);
+            
+              // Add the first image to the first menu container
+              var image1 = document.createElement("img");
+              image1.src = "../img/big-mac.jpg";
+              image1.className = "image-popup";
+              firstMenuContainer.appendChild(image1);
+            
+              // Add a button to order the menu
+              var orderButton = document.createElement("button");
+              orderButton.innerHTML = "Order";
+              orderButton.className = "order-button";
+              orderButton.addEventListener("click", function() {
+                alert("Your order has been placed!");
+              });
+              popup.appendChild(orderButton);
+            
+              // Add close button to the popup
+              var closeButton = document.createElement("button");
+              closeButton.innerHTML = "x";
+              closeButton.className = "close-button";
+              closeButton.addEventListener("click", function() {
+                document.body.removeChild(popup);
+              });
+              popup.appendChild(closeButton);
+            
+              // Add the popup to the page
+              document.body.appendChild(popup);
+            }
+          </script>
+        </div>
+      </div>
+      
+    
+<div class="Yorder">
+    <table>
+      <tr>
+        <th colspan="2">Your order</th>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td>rmXXXXX</td>
+      </tr>
+    </table><br>
+    <div>
+      <input type="radio" name="dbt" value="dbt" checked> Direct Bank Transfer
+    </div>
+    <p>
+        Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+    </p>
+    <div>
+      <input type="radio" name="dbt" value="cd"> Cash on Delivery
+    </div>
+    <div>
+      <input type="radio" name="dbt" value="cd"> Paypal <span>
+      <img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg" alt="" width="50">
+      </span>
+    </div>
+    <button type="button">Place Order</button>
+  </div> <!-- Yorder -->
+ </div>
+</div>
+
+</body>
+
+</html>
+
