@@ -46,6 +46,20 @@ header {
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/*-----------------------
+----bouton défilement--
+----------------------*/
+
+#scroll-to-bottom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 12px;
+  padding: 5px 10px;
+  width: 6%;
+}
+
+
 /*------------------------
 -------- LISTING ---------
 ------------------------*/
