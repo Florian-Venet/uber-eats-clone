@@ -63,24 +63,6 @@ function showPopup1() {
     document.body.appendChild(popup);
     }
 
-    // Après avoir créé l'élément "menu" dans la fonction showPopup1()
-    var orderButton = document.createElement("button");
-    orderButton.innerHTML = "Commander";
-    orderButton.className = "order-button";
-    orderButton.addEventListener("click", function() {
-    // Ajouter le menu à la commande
-    var commandTable = document.querySelector(".commande-table");
-    var newRow = commandTable.insertRow(-1);
-    var nameCell = newRow.insertCell(0);
-    var priceCell = newRow.insertCell(1);
-    var deleteCell = newRow.insertCell(2);
-    nameCell.innerHTML = "Big Mac";
-    priceCell.innerHTML = "14.00";
-    deleteCell.innerHTML = '<button class="delete-button">Supprimer</button>';
-    });
-    popup.appendChild(orderButton);
-
-
     // Dans la fonction qui initialise la page
     var deleteButtons = document.querySelectorAll(".delete-button");
     deleteButtons.forEach(function(button) {
