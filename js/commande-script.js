@@ -1,4 +1,59 @@
-/*---------------------------------------------------------------
+  // Your web app's Firebase configuration ////////////////////////////////////////////////
+  const firebaseConfig = {
+    apiKey: "AIzaSyCyXzbjzlveWQtdhwGG8xLf5hf_5-_KQ70",
+    authDomain: "fams-login.firebaseapp.com",
+    databaseURL: "https://fams-login-default-rtdb.firebaseio.com",
+    projectId: "fams-login",
+    storageBucket: "fams-login.appspot.com",
+    messagingSenderId: "872301520351",
+    appId: "1:872301520351:web:d873ca9d6915a409bc106a"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const user = firebase.auth().currentUser;
+  
+  
+  /*--------------------------------------evenement click------------------------------*/
+
+  function addCommandToDatabase(menuName, price) {    
+  
+    if (user) {
+      const userId = user.uid;
+      const commandsRef = database.ref('commands/' + userId);
+  
+      // Générez une clé unique pour chaque commande
+      const commandKey = commandsRef.push().key;
+  
+      // Créez un nouvel objet de commande
+      const newCommand = {
+        menuName: menuName,
+        price: price,
+        timestamp: firebase.database.ServerValue.TIMESTAMP
+      };
+  
+      // Ajoutez la commande à la base de données
+      commandsRef.child(commandKey).set(newCommand)
+        .then(() => {
+          console.log('Command added to database successfully');
+        })
+        .catch((error) => {
+          console.error('Error adding command to database:', error);
+        });
+    } else {
+      console.error('User not logged in');
+    }
+  }
+  
+  orderButton.addEventListener("click", function() {
+    
+    
+    // Appel de la fonction pour ajouter une commande
+    addCommandToDatabase('Big Mac', '14.00');
+  });
+  
+  /*---------------------------------------------------------------
 ------------------------fonction mcdo----------------------------
 ----------------------------------------------------------------*/
 
