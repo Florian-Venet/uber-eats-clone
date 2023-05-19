@@ -1,4 +1,4 @@
-  // Your web app's Firebase configuration ////////////////////////////////////////////////
+  // Firebase configuration ////////////////////////////////////////////////
   const firebaseConfig = {
     apiKey: "AIzaSyCyXzbjzlveWQtdhwGG8xLf5hf_5-_KQ70",
     authDomain: "fams-login.firebaseapp.com",
@@ -94,7 +94,7 @@ function showPopup1() {
     orderButton.innerHTML = "Order";
     orderButton.className = "order-button";
     orderButton.addEventListener("click", function() {
-      // Add the menu to the Your order section
+      // Add the menu to the order section
       var orderTable = document.querySelector(".Yorder table");
       var newRow = orderTable.insertRow(orderTable.rows.length - 1);
       var nameCell = newRow.insertCell(0);
